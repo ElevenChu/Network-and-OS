@@ -60,6 +60,7 @@ TCP:传输控制协议;IP：网际协议
 - 场景：	适用于实时应用（IP电话、视频会议、直播等）                     ||| 	适用于要求可靠传输的应用，例如文件传输
 
 
+![image](https://user-images.githubusercontent.com/57619422/132822535-ef1aa816-37b6-4ffb-9f50-5386a77e2831.png)
 
 
 每一个应用层（TCP/IP参考模型的最高层）协议一般都会使用到两个传输层协议之一：
@@ -100,6 +101,10 @@ TCP可以看成是一种字节流，它会处理IP层或以下的层的丢包、
 一个TCP连接由一个4元组构成，分别是两个IP地址和两个端口号。一个TCP连接通常分为三个阶段：连接、数据传输、退出（关闭）。通过三次握手建立一个链接，通过四次挥手来关闭一个连接。
 
 当一个连接被建立或被终止时，交换的报文段只包含TCP头部，而没有数据。
+
+**请说明一下哪种应用场景会使用TCP协议，使用它的意义
+
+:当对网络通讯质量有要求的时候，比如：整个数据要准确无误的传递给对方，这往往用于一些要求可靠的应用，比如HTTP、HTTPS、FTP等传输文件的协议，POP、SMTP等邮件传输的协议
 
 TCP报文的头部结构如图:
 ![491212a9f1de5ecb3c127bab0ad674c5_format,png](https://user-images.githubusercontent.com/57619422/132645732-44ab4533-561f-4b40-b0b3-d40bcb21139b.png)
@@ -197,6 +202,8 @@ URG：紧急指针（urgent pointer）有效。
 ![1J9R E@LJVZYGLMIBIFF9M](https://user-images.githubusercontent.com/57619422/132661692-8905b92c-f7a1-4e67-b7a4-c9e8e10cfde4.png)
 ![Q}ZEZ_$8M TL$Z)6XZ2V784](https://user-images.githubusercontent.com/57619422/132661709-217c37b8-3add-4ca0-919c-2eaf5a8314df.png)
 
+- 请你说明一下，SSL四次握手的过程 (SSL是安全协议)
+![image](https://user-images.githubusercontent.com/57619422/132823324-3896e47a-491b-4b00-81bc-2ba8ad16f7f8.png)
 
 
 ## Get和POST的区别
@@ -287,5 +294,19 @@ Cookie 与 Session，一般认为是两个独立的东西，Session采用的是�
 因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于失去了Session ID，也就得不到Session了。
 
 假定用户关闭Cookie的情况下使用Session，其实现途径有以下几种：1手动通过URL传值、隐藏表单传递Session ID.2用文件、数据库等形式保存Session ID，在跨页过程中手动调用
+
+
+## 请求和重定向 ##
+![image](https://user-images.githubusercontent.com/57619422/132819751-0f5f44a1-a611-4fe2-b960-c069c6cbd917.png)
+
+- forward 和redirect的区别？
+![image](https://user-images.githubusercontent.com/57619422/132822330-846cb6b4-f423-4256-b87b-252d067b56ee.png)
+
+- 请讲一下浏览器从接收到一个URL，到最后展示出页面，经历了哪些过程
+:1.DNS解析 2.TCP连接 3.发送HTTP请求 4.服务器处理请求并返回HTTP报文 5.浏览器解析渲染页面
+
+- 路由和交换机的区别
+:![image](https://user-images.githubusercontent.com/57619422/132824692-05de808d-060f-4a9b-834b-94865a8b165b.png)
+
 
 
